@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	 version="3.0">
+    <context-param>
+        <param-name>cafePrice</param-name>
+        <param-value>18.50</param-value>
+    </context-param>
+    <context-param>
+        <param-name>sugarPrice</param-name>
+        <param-value>6.95</param-value>
+    </context-param>
+    <context-param>
+        <param-name>waterPrice</param-name>
+        <param-value>1.29</param-value>
+    </context-param>
+     <context-param>
+      <param-name>report</param-name>
+      <param-value>http://xro7.wordpress.com/2011/12/10/project-3-report/</param-value>
+   </context-param>
+
+    <servlet>
+        <servlet-name>CartPost</servlet-name>
+        <servlet-class>Cart.CartServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>CartPost</servlet-name>
+        <url-pattern>/Cart.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CartGet</servlet-name>
+        <servlet-class>Cart.CartServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>CartGet</servlet-name>
+        <url-pattern>/index</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+      <servlet-name>redirect</servlet-name>
+      <servlet-class>Cart.RedirectServlet</servlet-class>
+   </servlet>
+   
+   <servlet-mapping>
+      <servlet-name>redirect</servlet-name>
+      <url-pattern>/redirect.do</url-pattern>
+   </servlet-mapping>
+   
+   <listener>
+      <listener-class>Cart.ServletListener</listener-class>
+      
+   </listener>
+   
+<welcome-file-list>  
+        <welcome-file>index</welcome-file>  
+</welcome-file-list> 
+    
+</web-app>
